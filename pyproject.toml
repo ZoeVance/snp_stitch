@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=80.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snp_stitch"
+version = "0.1"
+dependencies = ['scikit-learn',
+                'joblib',
+                'pysam',
+                'pandas',
+                'numpy']
+
+[project.scripts]
+snp_stitch = "snp_stitch.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
