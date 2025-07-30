@@ -85,7 +85,7 @@ def parse_datasets(path_to_datasets,cores):
         for read_dir in read_dirs:
             if len(os.listdir(read_dir)) > 0:
                 reads_present = True
-            read_paths = [os.path.join(read_dir,read_file) for read_file in os.listdir(read_dir)]
+            read_paths = [os.path.join(read_dir,read_file) for read_file in os.listdir(read_dir) if read_file.endswith('.bam')]
             with ProcessPoolExecutor(max_workers=cores) as executor:
                 data_list = list(executor.map(get_data_for_train,read_paths,itertools.repeat(tnc_dict),itertools.repeat(hp_dict),itertools.repeat(dataset)))
             dfs_to_concat.extend([pd.DataFrame.from_dict(data,orient='index') for data in data_list])
