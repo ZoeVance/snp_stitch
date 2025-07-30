@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "snp_stitch"
-version = "0.1"
+#version = "0.1"
 dynamic = ['version']
 dependencies = ['scikit-learn',
                 'joblib',
@@ -19,4 +19,4 @@ snp_stitch = "snp_stitch.__main__:main"
 where = ["."]
 
 [tools.setuptools.package-data]
-"snp_stitch.models" = ['*.pkl','*.pkl.gz']
+"snp_stitch" = ['*.pkl','*.pkl.gz']

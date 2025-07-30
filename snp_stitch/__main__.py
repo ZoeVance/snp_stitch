@@ -23,7 +23,7 @@ def main(sysargs=sys.argv[1:]):
     call_parser.add_argument('-o','--out_dir',help='Path to directory for output',default=f'variant_caller_output_{datetime.date.today()}',dest='output_dir')
     call_parser.add_argument('-e','--tolerance',help='Tolerance for error when calling variants',default=0.02,dest='tol',type=float)
     call_parser.add_argument('-f','--min_frequency',help='Minimum frequency for an allele to be output',default=0.05,dest='min_freq',type=float)
-    call_parser.add_argument('-m','--models',help='Path to dir with model and encoder files',default='models',dest='models_path')
+    call_parser.add_argument('-m','--models',help='Path to dir with model and encoder files',default=os.path.join(Path(__file__).parent,'models'),dest='models_path')
     call_parser.add_argument('-p','--cores',help='Number of cores to use',default=1,dest='cores')
 
     train_parser.add_argument('-d',"--data_dir",help="Path to datasets to be used in training; must contain reference sequence and mapped reads", dest="data_dir")
@@ -63,6 +63,7 @@ def main(sysargs=sys.argv[1:]):
             elif not (args.bam_path or args.unmapped_reads):
                 print("Mapped reads must be provided!")
                 sys.exit(1)
+            print(f'Models path being used is {args.models_path}')
             Path(args.output_dir).mkdir(parents=True, exist_ok=True)
             print(f'Calling variants against reference {args.ref} for file {args.bam_path}...')
             ref_name,tnc_dict, hp_dict = prep_ref_seq_features(ref_fasta=args.ref)
