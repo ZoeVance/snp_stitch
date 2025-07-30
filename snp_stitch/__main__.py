@@ -63,7 +63,6 @@ def main(sysargs=sys.argv[1:]):
             elif not (args.bam_path or args.unmapped_reads):
                 print("Mapped reads must be provided!")
                 sys.exit(1)
-            print(f'Models path being used is {args.models_path}')
             Path(args.output_dir).mkdir(parents=True, exist_ok=True)
             print(f'Calling variants against reference {args.ref} for file {args.bam_path}...')
             ref_name,tnc_dict, hp_dict = prep_ref_seq_features(ref_fasta=args.ref)
