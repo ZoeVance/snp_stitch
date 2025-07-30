@@ -1,10 +1,11 @@
 [build-system]
-requires = ["setuptools>=80.0"]
+requires = ["setuptools>=80.0","setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "snp_stitch"
 version = "0.1"
+dynamic = ['version']
 dependencies = ['scikit-learn',
                 'joblib',
                 'pysam',
@@ -16,3 +17,6 @@ snp_stitch = "snp_stitch.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[tools.setuptools.package-data]
+"snp_stitch.models" = ['*.pkl','*.pkl.gz']
