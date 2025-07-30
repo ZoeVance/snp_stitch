@@ -22,7 +22,7 @@ license = 'MIT'
 license-files = ["LICEN[CS]E*"]
 
 [project.urls]
-Homepage = 'https://github.com/ZoeVance/snp_stitch
+Homepage = 'https://github.com/ZoeVance/snp_stitch'
 
 [project.scripts]
 snp_stitch = "snp_stitch.__main__:main"
