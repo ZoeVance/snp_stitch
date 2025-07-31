@@ -20,15 +20,14 @@ def main(sysargs=sys.argv[1:]):
 
     call_parser.add_argument('-b',"--bam",help="Path to mapped reads in bam format", dest="bam_path")
     call_parser.add_argument('-r','--reference_fasta',help='Reference fasta to map reads and call variants against',dest='ref')
-    call_parser.add_argument('-o','--out_dir',help='Path to directory for output',default=f'variant_caller_output_{datetime.date.today()}',dest='output_dir')
+    call_parser.add_argument('-o','--out_dir',help='Path to directory for output',default=f'snp_stitch_output_{datetime.date.today()}',dest='output_dir')
     call_parser.add_argument('-e','--tolerance',help='Tolerance for error when calling variants',default=0.02,dest='tol',type=float)
-    call_parser.add_argument('-f','--min_frequency',help='Minimum frequency for an allele to be output',default=0.05,dest='min_freq',type=float)
     call_parser.add_argument('-m','--models',help='Path to dir with model and encoder files',default=os.path.join(Path(__file__).parent,'models'),dest='models_path')
     call_parser.add_argument('-p','--cores',help='Number of cores to use',default=1,dest='cores')
 
     train_parser.add_argument('-d',"--data_dir",help="Path to datasets to be used in training; must contain reference sequence and mapped reads", dest="data_dir")
     train_parser.add_argument('-mo','--models_output',help='Path to dir to store model and encoder files',default='user_models',dest='user_models_path')
-    train_parser.add_argument('-mn','--model_name',help='Prefix to add to files associated to this model',default='new_model',dest='user_model_name')
+    train_parser.add_argument('-mn','--model_name',help='Name of subdirectory in models output dir storing this model',default='new_model',dest='user_model_name')
     train_parser.add_argument('-p','--cores',help='Number of cores to use',default=1,dest='cores',type=int)
     train_parser.add_argument('-rt','--range_trees',help='Range of estimator counts to consider in the random forest during optimisation',default=(50,175),dest='estimator_range',nargs=2,type=int)
     train_parser.add_argument('-rd','--tree_depth',help='Range of depths to consider in the random forest during optimisation',default=(50,175),dest='depth_range',nargs=2,type=int)
