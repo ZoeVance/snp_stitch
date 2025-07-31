@@ -19,7 +19,6 @@ SNP-stitch is available from PyPI and can be installed with the following comman
 
 ``
 pip install snp_stitch
-
 ``
 
 Alternatively, the source code in this repository can be cloned and used to build/install locally
@@ -28,7 +27,6 @@ Alternatively, the source code in this repository can be cloned and used to buil
 git clone
 cd snp_stitch
 pip install .
-
 ````
 
 ## Usage
@@ -39,7 +37,6 @@ Variant calling requires a reference fasta and reads mapped to the same referenc
 
 ``
 snp_stitch call -b PATH_TO_BAM_FILE -r PATH_TO_REFERENCE_FASTA -o PATH_TO_OUTPUT directory
-
 ``
 
 
