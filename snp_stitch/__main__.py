@@ -13,16 +13,6 @@ from .model_training_functions import *
 # main running of everything
 def main(sysargs=sys.argv[1:]):
 
-    print('''
-        ######################################################
-        #                                                    #
-        #  ___  _ _  ___         ___  ___  _  ___  ___  _ _  #
-        # / __>| \ || . \  ___  / __>|_ _|| ||_ _||  _>| | | #
-        # \__ \|   ||  _/ |___| \__ \ | | | | | | | <__|   | #
-        # <___/|_\_||_|         <___/ |_| |_| |_| `___/|_|_| #
-        #                                                    #
-        ######################################################''')
-
     parser = argparse.ArgumentParser(add_help=True)
     subparser = parser.add_subparsers()
     call_parser = subparser.add_parser('call',help='call variants using pre-trained model')
@@ -63,6 +53,15 @@ def main(sysargs=sys.argv[1:]):
                 sys.exit(1)
     else:
         args = parser.parse_args(sysargs)
+        print('''
+        ######################################################
+        #                                                    #
+        #  ___  _ _  ___         ___  ___  _  ___  ___  _ _  #
+        # / __>| \ || . \  ___  / __>|_ _|| ||_ _||  _>| | | #
+        # \__ \|   ||  _/ |___| \__ \ | | | | | | | <__|   | #
+        # <___/|_\_||_|         <___/ |_| |_| |_| `___/|_|_| #
+        #                                                    #
+        ######################################################''')
 
     match sysargs[0]:
         case 'call':
