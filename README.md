@@ -3,7 +3,7 @@
 
 # SNP-stitch: lightweight variant calling for ONT data
 
-<img src="./docs/logo.svg" width="400">
+<img src="./logo.svg" width="400">
 
 SNP-stitch (**SNP**  **s**election by **t**ree-based **i**nference **t**olerating **c**omplex **h**eterogeneity) is a lightweight variant caller designed for use with ONT reads. Given a reference sequence, it uses a random forest regressor model to estimate expected base frequencies at a site in absence of true variation and assigns bases which are more than a tolerance value higher as variants.
 
