@@ -107,14 +107,14 @@ usage: snp_stitch train [-h] [-d DATA_DIR] [-mo USER_MODELS_PATH] [-mn USER_MODE
 options:
   -h, --help            Show this help message and exit
   -d  --data_dir        Path to datasets to be used in training; must contain reference sequence and mapped reads
-  -mo --models_output   Path to dir to store model and encoder files
-  -mn --model_name      Name of subdirectory in models output dir storing this model
-  -p  --cores           Number of cores to use
-  -rt --range_trees     Range of estimator counts to consider in the random forest during optimisation
-  -rd --tree_depth      Range of depths to consider in the random forest during optimisation
-  -ms --min_split       Range of values for minimum sample split to consider in the random forest during optimisation
-  -ml --min_leaf        Range of values for minimum leaf samples to consider in the random forest during optimisation
+  -mo --models_output   Path to dir to store model and encoder files. Default: user_models
+  -mn --model_name      Name of subdirectory in models output dir storing this model. Default: new_model
+  -p  --cores           Number of cores to use. Default: 1
+  -rt --range_trees     Range of estimator counts to consider in the random forest during optimisation. Default 50 175
+  -rd --tree_depth      Range of depths to consider in the random forest during optimisation. Default 50 175
+  -ms --min_split       Range of values for minimum sample split to consider in the random forest during optimisation. Default: 5 10
+  -ml --min_leaf        Range of values for minimum leaf samples to consider in the random forest during optimisation. Default: 3 5
   -mi --min_impurity    Range of values for the minimum impurity decrease to consider in the random forest during
-                        optimisation - must be in [0,1]
-  -cv --cv_folds        The number of folds to use for k-folds cross validation during optimisation
+                        optimisation - must be in [0,1]. Default: 0 0.5
+  -cv --cv_folds        The number of folds to use for k-folds cross validation during optimisation. Default: 5
 ````
