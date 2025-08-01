@@ -24,7 +24,7 @@ pip install snp_stitch
 Alternatively, the source code in this repository can be cloned and used to build/install locally
 
 ````
-git clone
+git clone https://github.com/ZoeVance/snp_stitch.git
 cd snp_stitch
 pip install .
 ````
