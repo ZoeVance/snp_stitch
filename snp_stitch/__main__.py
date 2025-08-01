@@ -5,11 +5,6 @@ from pathlib import Path
 from .variant_calling_functions import *
 from .model_training_functions import *
 
-# TODO
-# change output to just a file unless planning to output something else like a plot of overall fit or something
-
-
-
 # main running of everything
 def main(sysargs=sys.argv[1:]):
 

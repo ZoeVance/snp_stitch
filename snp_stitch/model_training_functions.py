@@ -1,5 +1,4 @@
 import os
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.preprocessing import LabelEncoder
@@ -16,14 +15,6 @@ from pathlib import Path
 import datetime
 import itertools
 
-# TODO
-# -add in cmd line args for various params (along with explanation/warnings re file size)
-#   -min and max number of trees in forest
-#   -min and max depth
-#   -min/max min samples split
-#   -min/max min samples leaf
-#   -min/max min impurity decrease
-#  maybe supply these as a dict to the model training function
 
 # prob return them with the model as a full output dict
 def training_main(path_to_datasets,model_dir,model_name,cores,estimator_range,depth_range,min_sample_range,min_leaf_range,min_impurity_range,folds):
