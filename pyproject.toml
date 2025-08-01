@@ -4,8 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "snp_stitch"
-#version = "0.1"
-dynamic = ['version']
+version = "1.0.0"
 authors = [{name = 'Zoe Vance', email='vancez@tcd.ie'}]
 description = 'A lightweight variant caller for ONT data'
 readme = 'README.md'
